@@ -74,8 +74,12 @@
                     <a href="#gallery" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Галерея</a>
                 </nav>
 
-                <!-- Кнопка бронирования -->
-                <div class="hidden md:block">
+                <!-- Кнопка бронирования и соцсети -->
+                <div class="hidden md:flex items-center gap-4">
+                    <div class="flex items-center gap-3 border-r border-slate-200 pr-4">
+                        <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-slate-400 hover:text-primary-600 text-xl transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-slate-400 hover:text-primary-600 text-xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
                     <a href="tel:+79682649592" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-primary-600 transition-colors">
                         <i class="fa-solid fa-phone text-sm"></i>
                         <span>Забронировать</span>
@@ -101,6 +105,10 @@
                 <a @click="mobileMenuOpen = false" href="#rules" class="text-lg font-medium text-slate-700 hover:text-primary-600">Правила</a>
                 <a @click="mobileMenuOpen = false" href="#gallery" class="text-lg font-medium text-slate-700 hover:text-primary-600">Галерея</a>
                 <hr class="border-slate-100 my-2">
+                <div class="flex justify-center gap-6 mb-2">
+                    <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-3xl text-slate-400 hover:text-primary-600"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-3xl text-slate-400 hover:text-primary-600"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
                 <a href="tel:+79682649592" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 text-white font-medium w-full text-center">
                     <i class="fa-solid fa-phone"></i> Позвонить нам
                 </a>
@@ -402,6 +410,10 @@
             <div class="flex items-center gap-3">
                 <img src="logo.jpg" alt="Логотип" class="h-8 w-auto object-contain rounded bg-slate-50 border border-slate-200">
                 <span class="font-bold text-slate-900">База Пятилетка</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-slate-400 hover:text-primary-600 text-xl transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-slate-400 hover:text-primary-600 text-xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="text-sm text-slate-500">
                 &copy; <script>document.write(new Date().getFullYear())</script> Рыболовная база Пятилетка.
