@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="База Пятилетка">
   <defs>
-    <clipPath id="c"><circle cx="256" cy="256" r="165"/></clipPath>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
   </defs>
   <rect width="512" height="512" rx="120" fill="#0f172a"/>
-  <circle cx="256" cy="256" r="185" fill="none" stroke="#fbbf24" stroke-width="18"/>
+  <circle cx="256" cy="256" r="185" fill="none" stroke="url(#gold)" stroke-width="18"/>
   <circle cx="256" cy="256" r="155" fill="#111827"/>
-  <image href="logo.jpg" x="91" y="91" width="330" height="330" clip-path="url(#c)" preserveAspectRatio="xMidYMid slice"/>
+  <text x="256" y="332" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="270" font-weight="700" fill="#d97706">5</text>
+  <text x="256" y="328" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="270" font-weight="700" fill="#fbbf24">5</text>
 </svg>
