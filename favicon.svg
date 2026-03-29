@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Пятилетка">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="#0f172a"/>
+  <circle cx="256" cy="256" r="170" fill="url(#g)" opacity="0.18"/>
+  <path d="M176 154h82c66 0 110 38 110 98 0 44-22 76-60 91l69 90h-78l-60-79h-30v79h-73V154zm73 141h25c29 0 46-14 46-41 0-28-17-42-46-42h-25v83z" fill="url(#g)"/>
+</svg>
