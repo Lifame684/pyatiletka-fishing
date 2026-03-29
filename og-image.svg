@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="База Пятилетка">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="990" cy="110" r="190" fill="#fbbf24" opacity="0.08"/>
+  <circle cx="180" cy="530" r="240" fill="#0ea5e9" opacity="0.08"/>
+  <path d="M95 470c130-70 225-92 370-92s252 22 382 92" fill="none" stroke="url(#gold)" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+  <path d="M180 240h120c96 0 160 56 160 145 0 69-35 118-96 140l109 143H336l-94-124h-47v124h-118V240zm118 210h37c42 0 66-21 66-61 0-41-24-62-66-62h-37v123z" fill="url(#gold)"/>
+  <text x="590" y="215" fill="#f8fafc" font-family="Arial, sans-serif" font-size="62" font-weight="700">База Пятилетка</text>
+  <text x="590" y="275" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">Рыбалка и отдых в селе Московское</text>
+  <text x="590" y="335" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="24">Форелевый и карповый водоемы</text>
+  <text x="590" y="380" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="24">Беседки с мангалом • Удобный подъезд</text>
+  <text x="590" y="470" fill="#fbbf24" font-family="Arial, sans-serif" font-size="30" font-weight="700">5letka.ru</text>
+</svg>
