@@ -3,642 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рыболовная база Пятилетка | Ставропольский край</title>
-    <meta name="description" content="Рыболовная база Пятилетка в селе Московское недалеко от Ставрополя: карповый водоем, беседки с мангалом, хорошие цены, удобный подъезд и бронирование по телефону.">
+    <title>База Пятилетка | Премиум Отдых и Рыбалка</title>
+    <meta name="description" content="Отдых и рыбалка на базе Пятилетка в селе Московское недалеко от Ставрополя. Доступные цены, беседки с мангалом, отличный клев.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        pine: {
-                            50: '#eef7f3',
-                            100: '#d7ebe2',
-                            200: '#b0d8c5',
-                            300: '#86c19f',
-                            400: '#58a678',
-                            500: '#3f895f',
-                            600: '#2f6b4a',
-                            700: '#25543b',
-                            800: '#1e4330',
-                            900: '#183526'
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
                         },
-                        sand: {
-                            50: '#f9f5ec',
-                            100: '#f1e7d1',
-                            200: '#e7d5a9',
-                            300: '#d9bd78',
-                            400: '#cda352',
-                            500: '#b8862f',
-                            600: '#936821',
-                            700: '#724f1d',
-                            800: '#5f421d',
-                            900: '#51381d'
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
                         }
                     },
                     fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                        display: ['Prata', 'serif']
-                    },
-                    boxShadow: {
-                        glow: '0 30px 80px rgba(24, 53, 38, 0.28)',
-                        card: '0 22px 60px rgba(21, 37, 30, 0.10)'
-                    },
-                    animation: {
-                        floaty: 'floaty 7s ease-in-out infinite',
-                        appear: 'appear 700ms ease-out both'
-                    },
-                    keyframes: {
-                        floaty: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        appear: {
-                            '0%': { opacity: '0', transform: 'translateY(18px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        :root {
-            --bg: #f6f1e7;
-            --surface: rgba(255, 252, 246, 0.84);
-            --text: #1e2b24;
-            --muted: #5a695f;
-            --line: rgba(37, 84, 59, 0.12);
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.95)), url('gallery-3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll; /* Changed from fixed to scroll for iOS Safari compatibility */
         }
 
-        body {
-            font-family: 'Manrope', sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(205, 163, 82, 0.12), transparent 30%),
-                radial-gradient(circle at 85% 15%, rgba(63, 137, 95, 0.10), transparent 24%),
-                linear-gradient(180deg, #f9f5ed 0%, #f4efe3 50%, #f7f3ea 100%);
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .site-shell {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .site-shell::before,
-        .site-shell::after {
-            content: '';
-            position: fixed;
-            inset: auto;
-            width: 34rem;
-            height: 34rem;
-            border-radius: 9999px;
-            filter: blur(70px);
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.45;
-        }
-
-        .site-shell::before {
-            top: -8rem;
-            right: -10rem;
-            background: rgba(63, 137, 95, 0.15);
-        }
-
-        .site-shell::after {
-            bottom: 6rem;
-            left: -12rem;
-            background: rgba(184, 134, 47, 0.12);
-        }
-
-        .hero-photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(20, 34, 28, 0.02) 0%, rgba(20, 34, 28, 0.44) 100%);
-        }
-
-        .glass {
-            background: var(--surface);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.45);
-        }
-
-        .mesh-card {
-            background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(249, 245, 236, 0.72)),
-                radial-gradient(circle at top right, rgba(63, 137, 95, 0.10), transparent 40%);
-        }
-
-        .section-label {
-            letter-spacing: 0.24em;
-        }
-
-        .gallery-card img {
-            transition: transform 700ms ease, filter 400ms ease;
-        }
-
-        .gallery-card:hover img {
-            transform: scale(1.05);
-            filter: saturate(1.05);
-        }
-
-        [x-cloak] {
-            display: none !important;
+        .gold-gradient-text {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="site-shell antialiased selection:bg-pine-600 selection:text-white">
-    <div x-data="{ menuOpen: false, lightbox: false, image: '', caption: '' }" class="relative z-10">
-        <header x-data="{ scrolled: false }" @scroll.window="scrolled = window.pageYOffset > 18" class="sticky top-0 z-50">
-            <div :class="scrolled ? 'mx-3 mt-3 rounded-2xl border border-white/60 bg-white/85 shadow-card backdrop-blur-xl' : 'bg-transparent'" class="transition-all duration-300">
-                <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-                    <a href="#top" class="flex items-center gap-3">
-                        <img src="logo.jpg" alt="Логотип базы Пятилетка" class="h-12 w-12 rounded-2xl border border-white/70 bg-white object-cover shadow-lg shadow-pine-900/10">
-                        <div>
-                            <div class="text-sm font-semibold uppercase tracking-[0.28em] text-pine-700">Пятилетка</div>
-                            <div class="text-xs text-slate-500">рыболовная база у Ставрополя</div>
-                        </div>
-                    </a>
+<body class="antialiased selection:bg-gold-500 selection:text-white">
 
-                    <nav class="hidden items-center gap-8 text-sm font-semibold text-slate-700 lg:flex">
-                        <a href="#about" class="transition hover:text-pine-700">О базе</a>
-                        <a href="#rates" class="transition hover:text-pine-700">Тарифы</a>
-                        <a href="#gallery" class="transition hover:text-pine-700">Фотографии</a>
-                        <a href="#rules" class="transition hover:text-pine-700">Правила</a>
-                        <a href="#contacts" class="transition hover:text-pine-700">Контакты</a>
-                    </nav>
+    <!-- Hero Секция с большим логотипом -->
+    <section class="hero-bg relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20 px-4">
+        
+        <!-- Навигация (Абсолютная сверху) -->
+        <nav class="absolute top-0 w-full p-6 flex justify-between items-center z-50 max-w-7xl mx-auto">
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase">
+                <a href="#about" class="text-gray-300 hover:text-gold-400 transition">О базе</a>
+                <a href="#pricing" class="text-gray-300 hover:text-gold-400 transition">Тарифы</a>
+            </div>
+            
+            <div class="md:hidden flex-1"></div> <!-- Spacer for mobile -->
 
-                    <div class="hidden items-center gap-3 lg:flex">
-                        <a href="https://t.me/moskovskoe_fishing" target="_blank" rel="noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-pine-900/10 bg-white/70 text-lg text-slate-700 transition hover:border-pine-700/20 hover:text-pine-700">
-                            <i class="fa-brands fa-telegram"></i>
-                        </a>
-                        <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" rel="noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-pine-900/10 bg-white/70 text-lg text-slate-700 transition hover:border-pine-700/20 hover:text-pine-700">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="tel:+79682649592" class="rounded-full bg-pine-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-pine-900/20 transition hover:bg-pine-600">
-                            Позвонить
-                        </a>
-                    </div>
-
-                    <button @click="menuOpen = !menuOpen" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-pine-900/10 bg-white/80 text-slate-700 lg:hidden">
-                        <i class="fa-solid" :class="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
-                    </button>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-widest uppercase items-center">
+                <a href="#rules" class="text-gray-300 hover:text-gold-400 transition">Правила</a>
+                <a href="#contacts" class="text-gray-300 hover:text-gold-400 transition">Контакты</a>
+                <div class="flex space-x-4 border-l border-gray-600 pl-6 ml-2">
+                    <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-gray-300 hover:text-gold-400 text-xl transition"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-gray-300 hover:text-gold-400 text-xl transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
                 </div>
+            </div>
 
-                <div x-show="menuOpen" x-transition.opacity.duration.200ms class="border-t border-slate-200/80 bg-white/95 px-4 pb-5 pt-2 lg:hidden" x-cloak>
-                    <div class="flex flex-col gap-2 text-sm font-semibold text-slate-700">
-                        <a @click="menuOpen = false" href="#about" class="rounded-xl px-3 py-3 hover:bg-sand-50">О базе</a>
-                        <a @click="menuOpen = false" href="#rates" class="rounded-xl px-3 py-3 hover:bg-sand-50">Тарифы</a>
-                        <a @click="menuOpen = false" href="#gallery" class="rounded-xl px-3 py-3 hover:bg-sand-50">Фотографии</a>
-                        <a @click="menuOpen = false" href="#rules" class="rounded-xl px-3 py-3 hover:bg-sand-50">Правила</a>
-                        <a @click="menuOpen = false" href="#contacts" class="rounded-xl px-3 py-3 hover:bg-sand-50">Контакты</a>
-                    </div>
-                    <div class="mt-4 flex gap-3 justify-center">
-                        <a href="https://t.me/moskovskoe_fishing" target="_blank" rel="noreferrer" class="flex h-12 w-12 items-center justify-center rounded-2xl border border-pine-900/10 bg-sand-50 text-2xl text-slate-700 transition hover:text-pine-700">
-                            <i class="fa-brands fa-telegram"></i>
-                        </a>
-                        <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" rel="noreferrer" class="flex h-12 w-12 items-center justify-center rounded-2xl border border-pine-900/10 bg-sand-50 text-2xl text-slate-700 transition hover:text-pine-700">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                    </div>
-                    <div class="mt-3 flex flex-col gap-3">
-                        <div class="grid gap-3 sm:grid-cols-2">
-                            <a href="tel:+79682649592" class="rounded-2xl bg-pine-700 px-4 py-3 text-center text-sm font-semibold text-white">+7 (968) 264-95-92</a>
-                            <a href="tel:+79624025223" class="rounded-2xl bg-pine-700 px-4 py-3 text-center text-sm font-semibold text-white">+7 (962) 402-52-23</a>
-                        </div>
-                        <a href="https://yandex.ru/maps?text=45.318385,41.940190&si=rkqrrf2yqrw0d9bp1aewg1qnhr" target="_blank" rel="noreferrer" class="rounded-2xl border border-pine-900/10 bg-sand-50 px-4 py-3 text-center text-sm font-semibold text-slate-700">Открыть карту</a>
+            <!-- Мобильное меню (Alpine) -->
+            <div x-data="{ open: false }" class="md:hidden absolute top-6 right-6 z-50">
+                <button @click="open = !open" class="text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-3xl" x-show="!open"></i>
+                    <i class="fa-solid fa-xmark text-3xl" x-show="open" x-cloak></i>
+                </button>
+                
+                <div x-show="open" 
+                     x-transition
+                     @click.away="open = false"
+                     class="fixed inset-0 bg-dark-950/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8 z-40" x-cloak>
+                    <a @click="open = false" href="#about" class="text-2xl font-serif text-white hover:text-gold-400">О базе</a>
+                    <a @click="open = false" href="#pricing" class="text-2xl font-serif text-white hover:text-gold-400">Тарифы</a>
+                    <a @click="open = false" href="#rules" class="text-2xl font-serif text-white hover:text-gold-400">Правила</a>
+                    <a @click="open = false" href="#contacts" class="text-2xl font-serif text-white hover:text-gold-400">Контакты</a>
+                    <div class="flex space-x-6 pt-4">
+                        <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-3xl text-white hover:text-gold-400 transition"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-3xl text-white hover:text-gold-400 transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
                     </div>
                 </div>
             </div>
-        </header>
+        </nav>
 
-        <main id="top">
-            <section class="px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
-                <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-                    <div class="animate-appear pt-8 lg:pt-14">
-                        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-pine-900/10 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-pine-700 shadow-sm">
-                            <span class="h-2 w-2 rounded-full bg-sand-500"></span>
-                            село Московское, Ставропольский край
-                        </div>
-
-                        <h1 class="max-w-3xl font-display text-4xl leading-tight text-slate-900 sm:text-5xl lg:text-7xl">
-                            Спокойная рыбалка,
-                            <span class="text-pine-700">хорошая дорога</span>
-                            и день на природе без суеты.
-                        </h1>
-
-                        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                            «Пятилетка» — карповый водоем недалеко от Ставрополя. Здесь приезжают за тихим отдыхом, стабильным клевом, беседками с мангалом и понятными тарифами без сложных условий.
-                        </p>
-
-                        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                            <a href="tel:+79682649592" class="inline-flex items-center justify-center gap-3 rounded-full bg-pine-700 px-7 py-4 text-base font-bold text-white shadow-glow transition hover:bg-pine-600">
-                                <i class="fa-solid fa-phone"></i>
-                                Забронировать место
-                            </a>
-                            <a href="#rates" class="inline-flex items-center justify-center gap-3 rounded-full border border-pine-900/10 bg-white/80 px-7 py-4 text-base font-bold text-slate-800 transition hover:border-pine-700/20 hover:text-pine-700">
-                                <i class="fa-solid fa-wallet"></i>
-                                Посмотреть цены
-                            </a>
-                        </div>
-
-                        <div class="mt-10 grid gap-4 sm:grid-cols-3">
-                            <div class="mesh-card rounded-3xl border border-white/70 p-5 shadow-card">
-                                <div class="text-2xl font-extrabold text-pine-700">5 / 10 ч</div>
-                                <p class="mt-1 text-sm text-slate-600">Спортивная рыбалка с безлимитом по рыбе.</p>
-                            </div>
-                            <div class="mesh-card rounded-3xl border border-white/70 p-5 shadow-card">
-                                <div class="text-2xl font-extrabold text-pine-700">1 500 ₽</div>
-                                <p class="mt-1 text-sm text-slate-600">Дневной или ночной тариф с лимитом 5 кг.</p>
-                            </div>
-                            <div class="mesh-card rounded-3xl border border-white/70 p-5 shadow-card">
-                                <div class="text-2xl font-extrabold text-pine-700">3 000 ₽</div>
-                                <p class="mt-1 text-sm text-slate-600">День или ночь без лимита, беседка уже включена.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="pointer-events-none absolute -left-8 top-10 hidden h-24 w-24 rounded-full border border-sand-300/70 bg-sand-100/50 lg:block"></div>
-                        <div class="pointer-events-none absolute -right-6 bottom-16 hidden h-32 w-32 rounded-full bg-pine-200/40 blur-2xl lg:block"></div>
-
-                        <div class="grid gap-4 sm:grid-cols-[1.15fr_0.85fr] lg:gap-5">
-                            <div class="hero-photo relative overflow-hidden rounded-[2rem] shadow-glow">
-                                <img src="gallery-3.jpg" alt="Вид на пруд рыболовной базы Пятилетка" class="h-full min-h-[460px] w-full object-cover">
-                                <div class="absolute inset-x-0 bottom-0 z-10 p-6 text-white">
-                                    <div class="glass inline-flex rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white">рыбалка и отдых</div>
-                                    <p class="mt-4 max-w-sm text-sm leading-6 text-white/90">Комфортная база для коротких выездов и полноценного дня у водоема.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col gap-4 lg:pt-10">
-                                <div class="glass animate-floaty rounded-[2rem] p-5 shadow-card">
-                                    <img src="logo.jpg" alt="Логотип базы Пятилетка" class="h-24 w-24 rounded-2xl border border-white/60 bg-white object-cover shadow-md">
-                                    <div class="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-pine-700">рыболовная база</div>
-                                    <h2 class="mt-2 font-display text-3xl text-slate-900">Пятилетка</h2>
-                                    <p class="mt-3 text-sm leading-6 text-slate-600">Тихий карповый водоем с хорошим подъездом, оборудованными местами и понятными правилами.</p>
-                                </div>
-
-                                <div class="rounded-[2rem] bg-pine-900 p-6 text-white shadow-glow">
-                                    <div class="text-xs font-semibold uppercase tracking-[0.24em] text-sand-300">быстро добраться</div>
-                                    <p class="mt-3 text-2xl font-bold leading-tight">Недалеко от города, проезд возможен в любую погоду.</p>
-                                    <a href="https://yandex.ru/maps?text=45.318385,41.940190&si=rkqrrf2yqrw0d9bp1aewg1qnhr" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sand-300 transition hover:text-white">
-                                        Открыть маршрут
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="px-4 py-6 sm:px-6 lg:px-8">
-                <div class="mx-auto grid max-w-7xl gap-4 rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-card backdrop-blur sm:grid-cols-2 lg:grid-cols-4 lg:p-6">
-                    <div class="rounded-[1.5rem] bg-sand-50 px-5 py-4">
-                        <div class="text-xs font-bold uppercase tracking-[0.22em] text-pine-700">водоем</div>
-                        <div class="mt-2 text-lg font-bold text-slate-900">Карповый</div>
-                    </div>
-                    <div class="rounded-[1.5rem] bg-sand-50 px-5 py-4">
-                        <div class="text-xs font-bold uppercase tracking-[0.22em] text-pine-700">включено</div>
-                        <div class="mt-2 text-lg font-bold text-slate-900">Беседка и мангал</div>
-                    </div>
-                    <div class="rounded-[1.5rem] bg-sand-50 px-5 py-4">
-                        <div class="text-xs font-bold uppercase tracking-[0.22em] text-pine-700">условия</div>
-                        <div class="mt-2 text-lg font-bold text-slate-900">Туалеты по периметру</div>
-                    </div>
-                    <div class="rounded-[1.5rem] bg-sand-50 px-5 py-4">
-                        <div class="text-xs font-bold uppercase tracking-[0.22em] text-pine-700">контакты</div>
-                        <div class="mt-2 text-lg font-bold text-slate-900 block">+7 (968) 264-95-92</div>
-                        <div class="mt-1 text-lg font-bold text-slate-900 block">+7 (962) 402-52-23</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-                <div class="mx-auto max-w-7xl">
-                    <div class="max-w-3xl">
-                        <div class="section-label text-xs font-bold uppercase text-pine-700">О базе</div>
-                        <h2 class="mt-4 font-display text-3xl text-slate-900 sm:text-5xl">Продуманный отдых для тех, кто хочет приехать и просто наслаждаться водоемом.</h2>
-                    </div>
-
-                    <div class="mt-10 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-                        <div class="rounded-[2rem] border border-white/70 bg-white/80 p-8 shadow-card">
-                            <p class="text-lg leading-8 text-slate-600">
-                                База расположена в селе Московское, Изобильненский муниципальный округ. Подъезд удобный, территория подходит и для короткой рыбалки на несколько часов, и для спокойного дня или ночи у воды.
-                            </p>
-                            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-                                <div class="rounded-[1.5rem] bg-pine-50 p-5">
-                                    <div class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-pine-700 text-white">
-                                        <i class="fa-solid fa-road"></i>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-slate-900">Хорошая дорога</h3>
-                                    <p class="mt-2 text-sm leading-6 text-slate-600">До водоема можно доехать на любой машине в любую погоду.</p>
-                                </div>
-                                <div class="rounded-[1.5rem] bg-sand-50 p-5">
-                                    <div class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-500 text-white">
-                                        <i class="fa-solid fa-fish"></i>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-slate-900">Рыбы много</h3>
-                                    <p class="mt-2 text-sm leading-6 text-slate-600">Водоем зарыблен, клев стабильный, формат ориентирован на карповую рыбалку.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid gap-6 sm:grid-cols-2">
-                            <div class="mesh-card rounded-[2rem] border border-white/70 p-7 shadow-card">
-                                <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-pine-700 shadow-sm">
-                                    <i class="fa-solid fa-campground text-xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900">Беседка уже входит в тариф</h3>
-                                <p class="mt-3 text-sm leading-6 text-slate-600">Для дневной и ночной рыбалки беседка с мангалом включена в стоимость, без доплат.</p>
-                            </div>
-
-                            <div class="mesh-card rounded-[2rem] border border-white/70 p-7 shadow-card">
-                                <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-pine-700 shadow-sm">
-                                    <i class="fa-solid fa-users text-xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900">Можно приехать с семьей</h3>
-                                <p class="mt-3 text-sm leading-6 text-slate-600">Отдыхающие — 200 ₽, дети до 12 лет бесплатно. Подходит для спокойного выезда на природу.</p>
-                            </div>
-
-                            <div class="rounded-[2rem] bg-pine-900 p-7 text-white shadow-glow sm:col-span-2">
-                                <div class="grid gap-6 md:grid-cols-3">
-                                    <div>
-                                        <div class="text-xs font-semibold uppercase tracking-[0.24em] text-sand-300">дополнительно</div>
-                                        <div class="mt-3 text-3xl font-extrabold">250 ₽</div>
-                                        <p class="mt-2 text-sm text-white/75">Дрова, бук, сетка.</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-xs font-semibold uppercase tracking-[0.24em] text-sand-300">перевес</div>
-                                        <div class="mt-3 text-3xl font-extrabold">250 ₽ / кг</div>
-                                        <p class="mt-2 text-sm text-white/75">Для тарифа с лимитом 5 кг.</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-xs font-semibold uppercase tracking-[0.24em] text-sand-300">важно</div>
-                                        <div class="mt-3 text-3xl font-extrabold">> 5 кг</div>
-                                        <p class="mt-2 text-sm text-white/75">Трофейную рыбу отпускают обратно в водоем.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="rates" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-                <div class="mx-auto max-w-7xl rounded-[2.5rem] bg-pine-950 px-6 py-10 text-white shadow-glow sm:px-8 lg:px-10 lg:py-12">
-                    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                        <div class="max-w-2xl">
-                            <div class="section-label text-xs font-bold uppercase text-sand-300">Тарифы</div>
-                            <h2 class="mt-4 font-display text-3xl sm:text-5xl">Выберите удобный формат отдыха на воде.</h2>
-                            <p class="mt-4 text-base leading-7 text-white/72 sm:text-lg">Все условия собраны по файлу с тарифами: почасовая спортивная рыбалка и дневные или ночные заезды с лимитом или безлимитом.</p>
-                        </div>
-                        <a href="tel:+79682649592" class="inline-flex items-center justify-center gap-3 rounded-full bg-sand-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-sand-300">
-                            <i class="fa-solid fa-phone"></i>
-                            Забронировать по телефону
-                        </a>
-                    </div>
-
-                    <div class="mt-10 grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
-                        <article class="rounded-[2rem] border border-white/10 bg-white/6 p-7">
-                            <div class="flex items-center justify-between gap-4">
-                                <div>
-                                    <div class="text-xs font-bold uppercase tracking-[0.24em] text-sand-300">спортивная рыбалка</div>
-                                    <h3 class="mt-2 text-2xl font-bold">Почасовой тариф</h3>
-                                </div>
-                                <div class="rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/80">безлимит</div>
-                            </div>
-
-                            <div class="mt-6 space-y-4">
-                                <div class="rounded-[1.5rem] bg-white/8 p-5">
-                                    <div class="flex items-end justify-between gap-3">
-                                        <div>
-                                            <div class="text-lg font-bold">5 часов</div>
-                                            <div class="mt-1 text-sm text-white/65">Без ограничения по весу рыбы</div>
-                                        </div>
-                                        <div class="text-3xl font-extrabold text-sand-300">3 000 ₽</div>
-                                    </div>
-                                </div>
-                                <div class="rounded-[1.5rem] bg-white/8 p-5">
-                                    <div class="flex items-end justify-between gap-3">
-                                        <div>
-                                            <div class="text-lg font-bold">10 часов</div>
-                                            <div class="mt-1 text-sm text-white/65">Без ограничения по весу рыбы</div>
-                                        </div>
-                                        <div class="text-3xl font-extrabold text-sand-300">5 000 ₽</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul class="mt-6 space-y-3 text-sm text-white/82">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check mt-1 text-sand-300"></i><span>Разрешена 1 снасть.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check mt-1 text-sand-300"></i><span>Разрешен 1 крючок.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check mt-1 text-sand-300"></i><span>Рыбалка без подсака запрещена.</span></li>
-                            </ul>
-                        </article>
-
-                        <article class="rounded-[2rem] bg-gradient-to-br from-sand-100 to-white p-7 text-slate-900 shadow-card">
-                            <div class="flex items-center justify-between gap-4">
-                                <div>
-                                    <div class="text-xs font-bold uppercase tracking-[0.24em] text-pine-700">полноценный отдых</div>
-                                    <h3 class="mt-2 text-2xl font-bold">День и ночь</h3>
-                                </div>
-                                <div class="rounded-full bg-pine-900 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white">беседка включена</div>
-                            </div>
-
-                            <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                                <div class="rounded-[1.5rem] border border-pine-900/10 bg-white p-5">
-                                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-pine-700">С лимитом</div>
-                                    <div class="mt-3 text-3xl font-extrabold text-slate-900">1 500 ₽</div>
-                                    <p class="mt-3 text-sm leading-6 text-slate-600">День — 1 500 ₽, ночь — 1 500 ₽. Включено 5 кг на человека, сверх лимита 250 ₽/кг.</p>
-                                </div>
-                                <div class="rounded-[1.5rem] border border-sand-300 bg-sand-50 p-5">
-                                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-sand-700">Безлимит</div>
-                                    <div class="mt-3 text-3xl font-extrabold text-pine-800">3 000 ₽</div>
-                                    <p class="mt-3 text-sm leading-6 text-slate-600">День — 3 000 ₽, ночь — 3 000 ₽. Рыба без лимита, беседка с мангалом входит в стоимость.</p>
-                                </div>
-                            </div>
-
-                            <div class="mt-6 grid gap-3 sm:grid-cols-2">
-                                <div class="rounded-[1.25rem] bg-pine-50 px-4 py-4 text-sm text-slate-700"><strong class="text-slate-900">3 снасти</strong><br>разрешается на рыбака</div>
-                                <div class="rounded-[1.25rem] bg-pine-50 px-4 py-4 text-sm text-slate-700"><strong class="text-slate-900">200 ₽</strong><br>отдыхающий без удочки</div>
-                                <div class="rounded-[1.25rem] bg-pine-50 px-4 py-4 text-sm text-slate-700"><strong class="text-slate-900">Бесплатно</strong><br>дети до 12 лет</div>
-                                <div class="rounded-[1.25rem] bg-pine-50 px-4 py-4 text-sm text-slate-700"><strong class="text-slate-900">Бук 250 ₽</strong><br>сетка дров</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section id="gallery" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-                <div class="mx-auto max-w-7xl">
-                    <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                        <div class="max-w-3xl">
-                            <div class="section-label text-xs font-bold uppercase text-pine-700">Галерея</div>
-                            <h2 class="mt-4 font-display text-3xl text-slate-900 sm:text-5xl">Реальные фотографии водоема, территории и уловов гостей.</h2>
-                        </div>
-                        <p class="max-w-xl text-sm leading-6 text-slate-600 sm:text-base">Просмотрел все изображения в папке и собрал живую галерею без жесткой обрезки, чтобы сохранить атмосферу места.</p>
-                    </div>
-
-                    <div class="mt-10 columns-1 gap-4 space-y-4 sm:columns-2 lg:columns-4">
-                        <button @click="lightbox = true; image = 'gallery-1.jpg'; caption = 'Территория базы'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-1.jpg" alt="Территория базы" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-2.jpg'; caption = 'Улов гостей'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-2.jpg" alt="Улов гостей" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-3.jpg'; caption = 'Рыбалка на базе'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-3.jpg" alt="Рыбалка на базе" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-4.jpg'; caption = 'Водоем и берег'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-4.jpg" alt="Водоем и берег" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-5.jpg'; caption = 'Улов на Пятилетке'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-5.jpg" alt="Улов на Пятилетке" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-6.jpg'; caption = 'Место для отдыха'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-6.jpg" alt="Место для отдыха" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-7.jpg'; caption = 'Гости и улов'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-7.jpg" alt="Гости и улов" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-8.jpg'; caption = 'Территория водоема'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-8.jpg" alt="Территория водоема" class="w-full h-auto object-cover">
-                        </button>
-                        <button @click="lightbox = true; image = 'gallery-9.jpg'; caption = 'Рыбалка и отдых'" class="gallery-card group relative block w-full break-inside-avoid overflow-hidden rounded-[1.8rem] border border-white/70 bg-white shadow-card">
-                            <img src="gallery-9.jpg" alt="Рыбалка и отдых" class="w-full h-auto object-cover">
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <section id="rules" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-                <div class="mx-auto max-w-7xl rounded-[2.5rem] border border-red-200/70 bg-gradient-to-br from-red-50 via-white to-red-50 px-6 py-10 shadow-card sm:px-8 lg:px-10">
-                    <div class="max-w-3xl">
-                        <div class="section-label text-xs font-bold uppercase text-red-600">Важно знать</div>
-                        <h2 class="mt-4 font-display text-3xl text-slate-900 sm:text-5xl">Правила водоема коротко и понятно.</h2>
-                        <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">Собрал основные ограничения из файла, чтобы посетители сразу видели важные условия перед бронированием.</p>
-                    </div>
-
-                    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-scale-balanced"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">Трофеи отпускают</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Рыба весом более 5 кг отпускается обратно в водоем.</p>
-                        </div>
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-fish"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">Без подсака нельзя</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Рыбалка без подсака запрещена. Багрить рыбу также запрещено.</p>
-                        </div>
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-ship"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">Кораблики запрещены</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Использование корабликов на водоеме не допускается.</p>
-                        </div>
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-volume-xmark"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">Соблюдайте тишину</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Громко слушать музыку запрещается, чтобы не мешать другим гостям.</p>
-                        </div>
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-trash-can"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">После себя убирают</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Оставлять мусор после отдыха запрещено.</p>
-                        </div>
-                        <div class="rounded-[1.8rem] border border-red-200 bg-white p-6">
-                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-600"><i class="fa-solid fa-circle-info"></i></div>
-                            <h3 class="mt-4 text-xl font-bold text-slate-900">Формат водоема</h3>
-                            <p class="mt-2 text-sm leading-6 text-slate-600">Это карповый водоем с четкими правилами по снастям и весу рыбы.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contacts" class="px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-                <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-                    <div class="rounded-[2.5rem] bg-white/85 p-8 shadow-card backdrop-blur sm:p-10">
-                        <div class="section-label text-xs font-bold uppercase text-pine-700">Контакты</div>
-                        <h2 class="mt-4 font-display text-3xl text-slate-900 sm:text-5xl">Приезжайте на день, ночь или на несколько часов.</h2>
-                        <p class="mt-5 text-base leading-7 text-slate-600 sm:text-lg">Для бронирования достаточно написать или позвонить. База находится в селе Московское, Изобильненский муниципальный округ, Ставропольский край.</p>
-
-                        <div class="mt-8 space-y-5">
-                            <div class="rounded-[1.5rem] bg-sand-50 p-5">
-                                <div class="text-xs font-bold uppercase tracking-[0.2em] text-pine-700">телефоны для брони</div>
-                                <a href="tel:+79682649592" class="mt-2 block text-2xl font-extrabold text-slate-900 transition hover:text-pine-700">+7 (968) 264-95-92</a>
-                                <a href="tel:+79624025223" class="mt-1 block text-2xl font-extrabold text-slate-900 transition hover:text-pine-700">+7 (962) 402-52-23</a>
-                            </div>
-                            <div class="rounded-[1.5rem] bg-sand-50 p-5">
-                                <div class="text-xs font-bold uppercase tracking-[0.2em] text-pine-700">адрес</div>
-                                <p class="mt-2 text-lg font-bold text-slate-900">село Московское</p>
-                                <p class="mt-1 text-sm leading-6 text-slate-600">Изобильненский муниципальный округ, Ставропольский край</p>
-                            </div>
-                            <div class="rounded-[1.5rem] bg-sand-50 p-5">
-                                <div class="text-xs font-bold uppercase tracking-[0.2em] text-pine-700">мы в соцсетях</div>
-                                <div class="mt-3 flex gap-5">
-                                    <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-3xl text-slate-400 hover:text-pine-700 transition"><i class="fa-brands fa-telegram"></i></a>
-                                    <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-3xl text-slate-400 hover:text-pine-700 transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                            <a href="https://yandex.ru/maps?text=45.318385,41.940190&si=rkqrrf2yqrw0d9bp1aewg1qnhr" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-pine-700 px-6 py-4 text-sm font-bold text-white transition hover:bg-pine-600">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Открыть Яндекс Карты
-                            </a>
-                            <a href="#gallery" class="inline-flex items-center justify-center gap-3 rounded-full border border-pine-900/10 bg-white px-6 py-4 text-sm font-bold text-slate-800 transition hover:text-pine-700">
-                                <i class="fa-solid fa-image"></i>
-                                Посмотреть фотографии
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-card">
-                        <iframe src="https://yandex.ru/map-widget/v1/?ll=41.940190%2C45.318385&z=14&pt=41.940190,45.318385,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" class="min-h-[420px] w-full border-0"></iframe>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="border-t border-pine-900/10 px-4 py-8 text-sm text-slate-600 sm:px-6 lg:px-8">
-            <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
-                <div class="flex items-center gap-3">
-                    <img src="logo.jpg" alt="Логотип базы Пятилетка" class="h-10 w-10 rounded-2xl border border-white/70 bg-white object-cover">
-                    <div>
-                        <div class="font-bold text-slate-900">Пятилетка</div>
-                        <div class="text-xs text-slate-500">рыболовная база</div>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-2xl text-slate-400 hover:text-pine-700 transition"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-2xl text-slate-400 hover:text-pine-700 transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
-                </div>
-                <div class="text-center md:text-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> Рыболовная база Пятилетка. Ставропольский край.
-                </div>
+        <!-- Основной контент Hero -->
+        <div class="relative z-10 flex flex-col items-center text-center mt-10">
+            <!-- Большой Логотип (без обрезки) -->
+            <div class="mb-8 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-gold-400 to-amber-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <img src="logo.jpg" alt="База Пятилетка Лого" class="relative w-48 h-auto max-h-56 object-contain rounded-xl border border-dark-800 shadow-2xl bg-white/10 p-2">
             </div>
-        </footer>
 
-        <div x-show="lightbox" x-transition.opacity class="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/90 p-4" @click="lightbox = false" x-cloak>
-            <div class="max-w-5xl" @click.stop>
-                <img :src="image" :alt="caption" class="max-h-[80vh] w-auto max-w-full rounded-[1.8rem] border border-white/15 shadow-2xl">
-                <div class="mt-4 flex items-center justify-between gap-4 text-white">
-                    <div class="text-sm font-semibold tracking-[0.16em] uppercase text-white/80" x-text="caption"></div>
-                    <button @click="lightbox = false" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-4 drop-shadow-lg">База <span class="gold-gradient-text italic">Пятилетка</span></h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-12 font-light tracking-wide">
+                Два водоема для отличной рыбалки: форелевый и карповый. Комфортный отдых на природе всего в нескольких минутах от городской суеты.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="tel:+79682649592" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gold-500 hover:bg-gold-400 text-dark-950 font-bold rounded-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                    Забронировать
+                </a>
+                <a href="#pricing" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-gray-400 hover:border-gold-400 text-white font-medium rounded-sm uppercase tracking-wider transition-all hover:bg-white/5">
+                    Узнать цены
+                </a>
+            </div>
+        </div>
+
+        <!-- Индикатор скролла -->
+        <div class="absolute bottom-10 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-gold-400 transition">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Особенности (Горизонтальная полоса) -->
+    <section id="about" class="border-y border-dark-800 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-dark-800">
+                <div class="p-4">
+                    <i class="fa-solid fa-car text-3xl text-gold-500 mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Отличная дорога</h3>
+                    <p class="text-gray-400 text-sm font-light">Проезд на любой машине в любую погоду. Отсыпанная дорога до самого водоема.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-fish-fins text-3xl text-gold-500 mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Два Водоема</h3>
+                    <p class="text-gray-400 text-sm font-light">Форелевый и карповый пруды. Водоемы регулярно зарыбляются, отличный клев гарантирован.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-house-chimney text-3xl text-gold-500 mb-4"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Беседки с мангалом</h3>
+                    <p class="text-gray-400 text-sm font-light">Включены в стоимость дневных и ночных тарифов на карповом водоеме. Туалеты по периметру.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section id="pricing" class="py-16 md:py-24 relative overflow-hidden">
+        <!-- Декоративный фон -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-gold-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">Тарифы на <span class="text-gold-500 italic">отдых</span></h2>
+                <div class="h-1 w-20 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- Форель -->
+                <div class="glass-panel p-6 md:p-8 rounded-2xl relative group hover:-translate-y-2 transition duration-300 border border-blue-500/30">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-2xl uppercase tracking-wider font-bold shadow-lg shadow-blue-500/20">
+                        Форелевый водоем
+                    </div>
+                    <h3 class="font-serif text-2xl text-white mb-2">Ловля Форели</h3>
+                    <p class="text-gray-400 text-sm mb-6">Спортивная рыбалка на хищника. <br><b>Строго: 1 снасть, 1 крючок.</b></p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex justify-between items-end border-b border-dark-800 pb-2">
+                            <div>
+                                <div class="text-lg text-gray-200">5 часов</div>
+                                <div class="text-xs text-blue-400 uppercase tracking-wide">Безлимит вылова</div>
+                            </div>
+                            <div class="font-serif text-3xl text-white">3000<span class="text-xl text-gray-500">₽</span></div>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-dark-800 pb-2">
+                            <div>
+                                <div class="text-lg text-gray-200">10 часов</div>
+                                <div class="text-xs text-blue-400 uppercase tracking-wide">Безлимит вылова</div>
+                            </div>
+                            <div class="font-serif text-3xl text-white">5000<span class="text-xl text-gray-500">₽</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-dark-900/50 p-4 rounded-lg border border-dark-800 text-sm text-gray-300">
+                        <ul class="space-y-2">
+                            <li><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i> Рыбалка без подсака <b>запрещена</b>!</li>
+                            <li><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i> Багрить рыбу <b>строго запрещено</b>!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Карп -->
+                <div class="glass-panel p-6 md:p-8 rounded-2xl relative group hover:-translate-y-2 transition duration-300 border border-gold-500/30">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-dark-900 text-xs px-3 py-1 rounded-bl-lg rounded-tr-2xl uppercase tracking-wider font-bold shadow-lg shadow-gold-500/20">
+                        Карповый водоем
+                    </div>
+                    <h3 class="font-serif text-2xl text-white mb-2">Ловля Карпа</h3>
+                    <p class="text-gray-400 text-sm mb-6">Полноценный отдых. Разрешается 3 снасти. Беседка с мангалом <b>входит в стоимость</b>.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex justify-between items-end border-b border-dark-800 pb-2">
+                            <div>
+                                <div class="text-lg text-gray-200">День или Ночь</div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wide">Лимит 5 кг (перевес 250₽/кг)</div>
+                            </div>
+                            <div class="font-serif text-3xl text-white">1500<span class="text-xl text-gray-500">₽</span></div>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-gold-500/30 pb-2">
+                            <div>
+                                <div class="text-lg text-gold-400 font-semibold">Безлимит</div>
+                                <div class="text-xs text-gold-500/70 uppercase tracking-wide">День или Ночь</div>
+                            </div>
+                            <div class="font-serif text-3xl text-gold-400">3000<span class="text-xl text-gold-500/50">₽</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-dark-900/50 p-4 rounded-lg border border-dark-800 text-sm text-gray-300">
+                        <ul class="space-y-2">
+                            <li><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i> Карп свыше 5 кг <b>отпускается обратно</b>!</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Допы -->
+            <div class="mt-12 max-w-5xl mx-auto flex flex-wrap justify-center gap-4 text-sm">
+                <span class="px-4 py-2 rounded-full border border-dark-800 bg-dark-900/50 text-gray-300">
+                    <i class="fa-solid fa-users mr-2 text-gray-500"></i>Отдыхающие: 200₽
+                </span>
+                <span class="px-4 py-2 rounded-full border border-dark-800 bg-dark-900/50 text-gray-300">
+                    <i class="fa-solid fa-child mr-2 text-gray-500"></i>Дети до 12 лет: Бесплатно
+                </span>
+                <span class="px-4 py-2 rounded-full border border-dark-800 bg-dark-900/50 text-gray-300">
+                    <i class="fa-solid fa-fire mr-2 text-gold-500"></i>Дрова (бук): 250₽/сетка
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Изображение на всю ширину (Parallax эффект убран для мобильных) -->
+    <section class="h-[50vh] min-h-[400px] bg-center bg-cover relative md:bg-fixed" style="background-image: url('gallery-8.jpg');">
+        <div class="absolute inset-0 bg-dark-950/60 flex items-center justify-center">
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center italic px-4">Единение с <span class="gold-gradient-text">природой</span></h2>
+        </div>
+    </section>
+
+    <!-- Правила водоема -->
+    <section id="rules" class="py-16 md:py-24 bg-dark-950">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-scale-balanced text-4xl text-red-500 mb-4 opacity-80"></i>
+                <h2 class="font-serif text-3xl text-white mb-2">Строгие Правила</h2>
+                <p class="text-gray-400">Соблюдение правил обязательно для сохранения экосистемы базы и комфорта гостей.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start gap-4 p-6 bg-dark-900 rounded-lg border-l-4 border-red-500/50">
+                    <div class="text-red-400 text-xl mt-1"><i class="fa-solid fa-ban"></i></div>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Трофеи (Карповый пруд)</h4>
+                        <p class="text-sm text-gray-400">Карп весом более 5 килограмм подлежит обязательному возврату в водоем.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-dark-900 rounded-lg border-l-4 border-blue-500/50">
+                    <div class="text-blue-400 text-xl mt-1"><i class="fa-solid fa-fish"></i></div>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Лов (Форелевый пруд)</h4>
+                        <p class="text-sm text-gray-400">Строго 1 снасть и 1 крючок. Рыбалка без подсака запрещена. Багрить рыбу строго запрещено.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-dark-900 rounded-lg border-l-4 border-red-500/50">
+                    <div class="text-red-400 text-xl mt-1"><i class="fa-solid fa-volume-xmark"></i></div>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Режим тишины</h4>
+                        <p class="text-sm text-gray-400">Категорически запрещается громко слушать музыку. Уважайте отдых других.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-dark-900 rounded-lg border-l-4 border-red-500/50">
+                    <div class="text-red-400 text-xl mt-1"><i class="fa-solid fa-ship"></i></div>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Запрет корабликов</h4>
+                        <p class="text-sm text-gray-400">Использование прикормочных корабликов на водоеме запрещено.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-2 flex items-start gap-4 p-6 bg-dark-900 rounded-lg border-l-4 border-red-500/50">
+                    <div class="text-red-400 text-xl mt-1"><i class="fa-solid fa-trash-can"></i></div>
+                    <div>
+                        <h4 class="text-white font-medium mb-1">Чистота</h4>
+                        <p class="text-sm text-gray-400">Запрещается оставлять после себя мусор. Пользуйтесь урнами.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фотогалерея (Masonry Сетка) -->
+    <section class="py-12 md:py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl text-white mb-2">Наши Моменты</h2>
+                <div class="h-1 w-12 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <!-- CSS Masonry для галереи (не обрезаем фото) -->
+            <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-1 md:gap-4 md:space-y-4">
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-1.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-2.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-3.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-4.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-5.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-6.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-7.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-8.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+                <div class="break-inside-avoid overflow-hidden rounded-sm bg-dark-800">
+                    <img src="gallery-9.jpg" alt="Рыбалка" class="w-full h-auto hover:scale-105 transition duration-700 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и Карта -->
+    <section id="contacts" class="bg-dark-950 relative">
+        <div class="flex flex-col md:flex-row min-h-[600px]">
+            <!-- Информация -->
+            <div class="md:w-1/2 p-6 sm:p-12 md:p-20 flex flex-col justify-center bg-dark-900 border-r border-dark-800">
+                <h2 class="font-serif text-4xl text-white mb-8">Свяжитесь с нами</h2>
+                
+                <div class="space-y-8 mb-12">
+                    <div>
+                        <div class="text-xs text-gold-500 uppercase tracking-widest mb-2 font-bold">Бронирование</div>
+                        <a href="tel:+79682649592" class="text-3xl font-light text-white hover:text-gold-400 transition block mb-2">+7 (968) 264-95-92</a>
+                        <a href="tel:+79624025223" class="text-3xl font-light text-white hover:text-gold-400 transition block">+7 (962) 402-52-23</a>
+                    </div>
+                    
+                    <div>
+                        <div class="text-xs text-gold-500 uppercase tracking-widest mb-2 font-bold">Локация</div>
+                        <p class="text-xl font-light text-gray-300 leading-relaxed max-w-sm">
+                            село Московское<br>
+                            Изобильненский округ<br>
+                            Ставропольский край
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <div class="text-xs text-gold-500 uppercase tracking-widest mb-2 font-bold">Мы в соцсетях</div>
+                        <div class="flex gap-6 mt-2">
+                            <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-3xl text-gray-300 hover:text-gold-400 transition"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-3xl text-gray-300 hover:text-gold-400 transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://yandex.ru/maps?text=45.318385,41.940190&si=rkqrrf2yqrw0d9bp1aewg1qnhr" target="_blank" class="inline-flex items-center gap-3 text-gold-500 hover:text-gold-400 group">
+                    <span class="border-b border-gold-500/30 group-hover:border-gold-400 pb-1 uppercase tracking-wider text-sm font-bold">Проложить маршрут</span>
+                    <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Карта -->
+            <div class="md:w-1/2 h-[400px] md:h-auto">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=41.940190%2C45.318385&z=14&pt=41.940190,45.318385,pm2rdm&theme=dark" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="filter: grayscale(0.5) contrast(1.2);"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-dark-800 py-10 text-center">
+        <div class="flex justify-center mb-6">
+            <img src="logo.jpg" alt="Логотип" class="w-16 h-auto object-contain bg-white/5 rounded-lg p-1 opacity-70 hover:opacity-100 transition duration-300">
+        </div>
+        <div class="flex justify-center space-x-6 mb-6">
+            <a href="https://t.me/moskovskoe_fishing" target="_blank" class="text-gray-500 hover:text-gold-400 text-2xl transition"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://max.ru/join/-0PCuZKiBuFyjsJBasO83YF9p0yQwmcuNCXbVcTiuWo" target="_blank" class="text-gray-500 hover:text-gold-400 text-2xl transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.45 1869.77" class="w-[1em] h-[1em] inline-block fill-current" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"><path d="M224.83 1864.13l-62.35 0 0 -293.04 101.46 0 68.01 201.17 9.06 0 70.82 -201.17 99.2 0 0 293.04 -62.34 0 0 -217.52 -9.07 0 -77.11 217.52 -54.96 0 -73.68 -217.53 -9.06 0.01 0 217.52 0.02 0zm481.21 5.64c-27.58,0 -52.34,-6.41 -74.24,-19.18 -21.78,-13 -39.64,-31.72 -51.59,-54.1 -12.09,-23.28 -18.13,-49.57 -18.13,-78.88 0,-29.3 6.04,-55.42 18.13,-78.33 12.47,-23.3 29.67,-41.34 51.59,-54.11 21.9,-13.15 46.65,-19.73 74.23,-19.73 24.56,0 46.3,5.26 65.2,15.79 18.86,10.13 34.38,22.53 46.46,37.18l13.61 -47.32 48.73 0 0 293.04 -48.73 0 -13.61 -47.34c-12.08,14.65 -27.58,27.23 -46.48,37.76 -18.88,10.13 -40.62,15.2 -65.17,15.2l0 0.02zm15.86 -58.06c27.59,0 49.88,-8.64 66.89,-25.91 17.38,-17.66 26.06,-40.39 26.06,-68.19 0,-27.8 -8.68,-50.34 -26.06,-67.63 -17.01,-17.66 -39.3,-26.49 -66.89,-26.49 -27.19,0 -49.3,8.83 -66.3,26.49 -17.03,17.29 -25.51,39.83 -25.51,67.63 0,27.8 8.5,50.54 25.49,68.19 17.02,17.27 39.13,25.91 66.32,25.91zm271.01 52.42l-73.69 0 93.52 -149.91 -82.77 -143.13 73.69 0 54.98 98.61 10.77 0 57.82 -98.61 71.97 0 -82.74 139.19 93.51 153.85 -75.95 0 -62.9 -111.03 -10.77 0 -67.44 111.03z" style="fill:currentColor;fill-rule:nonzero"/><path d="M701.06 1354.74c-134.84,0 -197.48,-19.62 -306.07,-98.14 -69.11,88.34 -286.65,157.07 -296.23,39.26 0,-88.27 -19.93,-162.64 -41.91,-244.49 -26.92,-100.29 -56.85,-211.85 -56.85,-373.98 0,-386.58 319.11,-677.39 697.5,-677.39 378.3,0 674.95,304.95 674.95,681.16 0,376.16 -306.11,673.59 -671.41,673.59l0.02 -0.01zm5.46 -1020.49c-184.1,-9.58 -327.76,117.35 -359.44,316.04 -26.26,164.55 20.27,365.04 60.05,375.13 18.78,4.75 66.84,-33.88 96.43,-63.33 48.75,31.39 104.64,55.73 166.79,58.93 189.02,9.84 356.49,-137.14 366.41,-324.97 9.93,-187.84 -141.21,-351.95 -330.23,-361.8l-0.01 0z" style="fill:currentColor"/></svg></a>
+        </div>
+        <p class="text-gray-500 text-sm tracking-wide">
+            &copy; <script>document.write(new Date().getFullYear())</script> База Пятилетка. Все права защищены.
+        </p>
+    </footer>
+
 </body>
 </html>
