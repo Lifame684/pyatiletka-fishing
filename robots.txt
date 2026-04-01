@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Host: 5letka.ru
+
 Sitemap: https://5letka.ru/sitemap.xml
